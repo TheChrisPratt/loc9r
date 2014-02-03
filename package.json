@@ -1,0 +1,12 @@
+{
+  "name": "Loc9r",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "express": "3.4.x",
+    "express3-handlebars": "0.5.x"
+  }
+}
