@@ -1,3 +1,5 @@
-exports.index = function(req,res) {
-  res.render("index",{ title: "Express" });
-}; //index
+var ctrl = require("../server/controllers/main");
+
+module.exports = function (app) {
+	app.get("/",ctrl.index);
+};
