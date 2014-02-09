@@ -11,6 +11,8 @@ app.engine(".tmpl",exphbs(
 	{
 		defaultLayout: "main", 
 		extname: ".tmpl",
+    handlebars: require("handlebars"),
+    helpers: require("./helpers"),
 		layoutsDir: path.join(__dirname,"server","views","layouts"),
 		partialsDir: path.join(__dirname,"server","views","partials")
 	}));
