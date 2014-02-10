@@ -19,3 +19,7 @@ exports.stars = function (rating) {
   }
   return new Handlebars.SafeString(ret);
 }; //stars
+
+exports.multiLineText = function (text) {
+  return new Handlebars.SafeString(text.replace(/(\r\n|\n|\r)/g,"<br />").replace(/\s\s/g,"&nbsp;&nbsp;"));
+}; //multiLineText
