@@ -2,20 +2,20 @@ var express = require("express");
 var exphbs = require("express3-handlebars");
 var http = require("http");
 var path = require("path");
+require('server/models/db');
 
 var app = express();
 
 app.set("port",process.env.PORT || 3001);
 app.set("views",path.join(__dirname,"server","views"));
-app.engine(".tmpl",exphbs(
-	{
-		defaultLayout: "main", 
-		extname: ".tmpl",
-    handlebars: require("handlebars"),
-    helpers: require("./helpers"),
-		layoutsDir: path.join(__dirname,"server","views","layouts"),
-		partialsDir: path.join(__dirname,"server","views","partials")
-	}));
+app.engine(".tmpl",exphbs({
+	defaultLayout: "main", 
+	extname: ".tmpl",
+  handlebars: require("handlebars"),
+  helpers: require("./helpers"),
+	layoutsDir: path.join(__dirname,"server","views","layouts"),
+	partialsDir: path.join(__dirname,"server","views","partials")
+}));
 app.set("view engine",".tmpl");
 app.use(express.favicon());
 app.use(express.logger("dev"));
